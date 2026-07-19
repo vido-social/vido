@@ -104,17 +104,6 @@ const processSteps = [
   },
 ];
 
-const packageItems = [
-  '12 julkaisua kuukaudessa',
-  'Facebook- ja Instagram-tekstit',
-  'Kuvien viimeistely',
-  'Lyhytvideoiden editointi',
-  'WhatsApp-välitteinen materiaaliohjaus',
-  'Kuukausittainen raportti',
-];
-
-const exclusions = ['Maksettu mainonta', 'Kuvauspaikat', 'Kanavien ulkopuoliset kampanjasivut'];
-
 const valueProps = [
   {
     icon: Wrench,
@@ -130,6 +119,54 @@ const valueProps = [
     icon: ShieldCheck,
     title: 'Aitous',
     text: 'Omat työmaat, omat tekijät ja oikeat työnäytteet. Ei kuvapankkifiilistä.',
+  },
+];
+
+const pricingPackages = [
+  {
+    title: 'VIDO Startti',
+    price: '500 €',
+    period: 'Kertaprojekti',
+    description: 'Yritykselle, jolla ei ole toimivaa verkkosivua tai uskottavaa lähtöpakettia.',
+    features: [
+      'Yhden sivun verkkosivusto',
+      'Palvelut ja toimialue',
+      'Tarjouspyyntöpolku',
+      '6 valmista somejulkaisua',
+      'Mobiilioptimointi',
+    ],
+    cta: 'Kysy Startista',
+    featured: false,
+  },
+  {
+    title: 'VIDO Social',
+    price: '500 € / kk',
+    period: '1 kk irtisanomisaika',
+    description: 'Yritykselle, joka haluaa näyttää aktiiviselta ja uskottavalta ilman omaa sisältötiimiä.',
+    features: [
+      '12 ammattimaista julkaisua / kk',
+      'Tekstit ja visuaalinen toteutus',
+      'Asiakkaan omista kuvista',
+      'Valmiina julkaistavaksi',
+      '1 kuukauden irtisanomisaika',
+    ],
+    cta: 'Aloita VIDO Social',
+    featured: true,
+  },
+  {
+    title: 'VIDO Growth',
+    price: 'Sovitaan',
+    period: 'Kokonaisuus',
+    description: 'Yritykselle, joka tarvitsee sivuston, jatkuvan sisällön ja aktiivisen myynnin tueksi yhtenäisen järjestelmän.',
+    features: [
+      'Laajempi verkkosivusto',
+      'Jatkuva sisällöntuotanto',
+      'Myyntimateriaalit',
+      'Laskeutumissivut kampanjoihin',
+      'Kasvua tukeva jatkokehitys',
+    ],
+    cta: 'Pyydä ehdotus',
+    featured: false,
   },
 ];
 
@@ -173,12 +210,12 @@ function App() {
             <div className="hero-copy">
               <div className="eyebrow">
                 <Zap size={16} aria-hidden="true" />
-                WhatsAppista valmiiksi someksi
+                Rakennus- ja talotekniikka-alan sisältötoimisto
               </div>
-              <h1 id="hero-title">VIDO Social - Työmailta näkyväksi.</h1>
+              <h1 id="hero-title">Näytä yhtä hyvältä kuin teet työsi.</h1>
               <p className="hero-lead">
-                Te teette työn. Me teemme siitä näkyvää. Sinä lähetät kuvat WhatsAppilla.
-                Me teemme niistä valmiit julkaisut.
+                VIDO rakentaa rakennus- ja talotekniikkayrityksille uskottavan digitaalisen ilmeen: 
+                verkkosivut, sisällöt ja myyntimateriaalit ilman raskasta markkinointiprojektia.
               </p>
               <div className="hero-actions">
                 <a className="primary-button" href="mailto:info@vidosocial.com?subject=15%20min%20kartoitus">
@@ -218,7 +255,7 @@ function App() {
               <h2 id="problem-title">Kuulostaako tutulta?</h2>
               <p>
                 Kiireen vuoksi työmaakuvia ei koskaan julkaista. Hyvä työ ei auta uusia asiakkaita
-                löytämään teitä, jos sitä ei nähdä.
+                löytämään teitä, jos sitä ei nähdä. VIDO tekee osaamisen näkyväksi tavalla, joka tukee ostopäätöstä.
               </p>
             </div>
             <div className="problem-grid">
@@ -336,50 +373,33 @@ function App() {
             <div className="section-heading-row">
               <h2 id="pricing-title">Selkeä ja kiinteä hinnoittelu.</h2>
               <p>
-                Yksi kuukauspaketti aktiivisen näkyvyyden rakentamiseen ilman raskasta sisältöpalaveria.
+                Ei raskasta toimistosopimusta. Valitse näkyvyys, verkkosivu tai kokonaisuus.
               </p>
             </div>
 
-            <div className="pricing-grid">
-              <article className="pricing-card featured">
-                <div className="package-topline">
-                  <span>Kasvu-paketti</span>
-                  <strong>590 € / kuukausi</strong>
-                  <small>ALV 0%</small>
-                </div>
-                <p>Sisältää 12 julkaisua kuukaudessa, tekstit, kuvien viimeistelyn ja videoeditoinnin.</p>
-                <ul>
-                  {packageItems.map((item) => (
-                    <li key={item}>
-                      <Check size={18} aria-hidden="true" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <a className="primary-button full-width" href="mailto:info@vidosocial.com?subject=Tarjouspyynt%C3%B6%20Kasvu-paketista">
-                  Pyydä tarjous
-                  <ArrowRight size={20} aria-hidden="true" />
-                </a>
-              </article>
-
-              <div className="comparison-matrix" aria-label="Hinnoittelun vertailu">
-                <div className="matrix-row matrix-head">
-                  <span>Vertailukohta</span>
-                  <strong>500 € / kk</strong>
-                </div>
-                <div className="matrix-row">
-                  <span>Julkaisumäärä</span>
-                  <strong>Rajattu tai tapauskohtainen</strong>
-                </div>
-                <div className="matrix-row">
-                  <span>VIDO Social</span>
-                  <strong>12 julkaisua + editointi</strong>
-                </div>
-                <div className="matrix-row">
-                  <span>Ei sisällä</span>
-                  <strong>{exclusions.join(', ')}</strong>
-                </div>
-              </div>
+            <div className="pricing-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+              {pricingPackages.map((pkg) => (
+                <article key={pkg.title} className={`pricing-card ${pkg.featured ? 'featured' : ''}`}>
+                  <div className="package-topline">
+                    <span>{pkg.title}</span>
+                    <strong>{pkg.price}</strong>
+                    <small>{pkg.period}</small>
+                  </div>
+                  <p>{pkg.description}</p>
+                  <ul>
+                    {pkg.features.map((item) => (
+                      <li key={item}>
+                        <Check size={18} aria-hidden="true" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <a className="primary-button full-width" href="mailto:info@vidosocial.com?subject=Yhteydenotto">
+                    {pkg.cta}
+                    <ArrowRight size={20} aria-hidden="true" />
+                  </a>
+                </article>
+              ))}
             </div>
           </div>
         </section>
