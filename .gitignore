@@ -1,0 +1,29 @@
+# Riippuvuudet
+node_modules/
+.pnpm-store/
+
+# Tuotanto- ja build-kansiot
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# Lokitiedostot
+lines
+*.log
+pnpm-debug.log*
+
+# Paikalliset ympäristömuuttujat
+.env
+.env.local
+.env.*.local
+
+# Järjestelmätiedostot ja editorit
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvsca*
+*.njsproj
+*.sln
+*.sw?
